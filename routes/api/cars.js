@@ -21,9 +21,10 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
     let newCar = req.body;
+    newCar.year = parseInt(newCar.year)
     newCar.id = uuid()
     cars.push(newCar)
-    res.json(cars)
+    res.redirect("/")
 })
 
 router.put("/:id", (req, res) => {

@@ -1,12 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cars</title>
-</head>
-<body>
-    {{body}}
-</body>
-</html>
+<h1>{{title}}</h1>
+<form action="/api/cars" method="POST">
+    <div class="form-group">
+        <label for="brand">Brand</label>
+        <input type="text" name="brand" placeholder="Brand">
+    </div>
+    <div class="form-group">
+        <label for="model">Model</label>
+        <input type="text" name="model" placeholder="Model">
+    </div>
+    <div class="form-group">
+        <label for="year">Year</label>
+        <input type="text" name="year" placeholder="Year">
+    </div>
+    <input type="submit">
+</form>
+<ul class="mt-4">
+    {{#each cars}}
+    <li> {{this.brand}} {{this.model}}</li>
+    {{/each}}
+</ul>
